@@ -1,0 +1,17 @@
+name: Build and Run
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: build
+      run: g++ driver.c -Wall -Wextra -fprofile-arcs -ftest-coverage -o driver *.c*
+      
+    - name: run
+      run: ./driver
