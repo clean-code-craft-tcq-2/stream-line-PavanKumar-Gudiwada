@@ -1,0 +1,17 @@
+name: Run and print to console
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: build
+      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o driver driver.c sender.c generate.c
+      
+    - name: run
+      run: ./driver
