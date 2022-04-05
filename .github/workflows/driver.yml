@@ -11,7 +11,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: build
-      run: g++ driver.c -Wall -Wextra -fprofile-arcs -ftest-coverage -o driver driver.c sender.c generate.c
+      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o driver driver.c sender.c generate.c
       
     - name: run
       run: ./driver
