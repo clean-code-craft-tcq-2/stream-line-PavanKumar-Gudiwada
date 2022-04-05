@@ -13,8 +13,8 @@ TEST_CASE("generate sesnsor values and print to console") {
   
   for(int i=0 ; i<50 ;i++)
   {
-    REQUIRE((sensorValuePairsPoniter[i].soc >= 0) && (sensorValuePairsPoniter[i].soc <= 100));
-    REQUIRE((sensorValuePairsPoniter[i].voltage >= 0) && (sensorValuePairsPoniter[i].voltage <= 12));
+    REQUIRE(((sensorValuePairsPoniter[i].soc >= 0) && (sensorValuePairsPoniter[i].soc <= 100)));
+    REQUIRE(((sensorValuePairsPoniter[i].voltage >= 0) && (sensorValuePairsPoniter[i].voltage <= 12)));
   }
   
 	sendThroughConsole(sensorValuePairsPoniter);
